@@ -4,6 +4,9 @@ import com.example.myapplication.animation.SelfSvgaAnimitionView;
 import com.example.myapplication.animation.SelfSvgaSetInfoCallback;
 import com.opensource.svgaplayer.SVGAImageView;
 
+/*
+ *可单独使用
+ */
 public class SvgaActivity extends BaseAnimationActivity {
 
 
