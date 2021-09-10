@@ -3,8 +3,11 @@ package com.example.myapplication.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.RenderMode;
 import com.example.myapplication.animation.SelfLottieAnimitionView;
 import com.example.myapplication.animation.SelfLottieSetInfoCallback;
 import com.example.myapplication.animation.SelfSvgaAnimitionView;
@@ -45,6 +48,23 @@ public class CommenAnimationActivity extends BaseAnimationActivity {
 
                     @Override
                     public void circleLottieStart(LottieAnimationView view) {
+
+                    }
+
+                    @Override
+                    public void changeAccelerate(LottieAnimationView view, boolean isAccelerate) {
+
+                        if (isAccelerate) {
+                            if (view.getLayerType() != View.LAYER_TYPE_HARDWARE) {
+                                view.setRenderMode(RenderMode.HARDWARE);
+                            }
+                        } else {
+                            if (view.getLayerType() != View.LAYER_TYPE_SOFTWARE) {
+                                view.setRenderMode(RenderMode.SOFTWARE);
+                            }
+                        }
+
+                        Log.e("isHardwareAccelerated", "changeAccelerate----v----"+view.getLayerType());
 
                     }
                 });

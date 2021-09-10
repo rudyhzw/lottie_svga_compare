@@ -4,10 +4,12 @@ import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+import com.airbnb.lottie.RenderMode;
 import com.example.myapplication.R;
 import com.example.myapplication.utils.DensityUtil;
 
@@ -16,6 +18,7 @@ public class SelfLottieAnimitionView extends BaseAnimationView {
 
     private LottieAnimationView lottie_start;
     private SelfLottieSetInfoCallback callback;
+    private boolean isAccelerate = true;
 
     public SelfLottieAnimitionView(Context context, String sJson) {
         super(context, sJson);
@@ -51,6 +54,20 @@ public class SelfLottieAnimitionView extends BaseAnimationView {
             public void onClick(View v) {
                 startAndPlaySelfCircle();
                 callback.circleLottieStart(lottie_start);
+            }
+        });
+
+        Button btn_accelerate = findViewById(R.id.btn_accelerate);
+        btn_accelerate.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isAccelerate = !isAccelerate;
+                if (isAccelerate) {
+                    btn_accelerate.setText("不加速");
+                } else {
+                    btn_accelerate.setText("加速");
+                }
+                callback.changeAccelerate(lottie_start, isAccelerate);
             }
         });
 

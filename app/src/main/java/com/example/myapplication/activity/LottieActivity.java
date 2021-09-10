@@ -20,6 +20,11 @@ public class LottieActivity extends BaseAnimationActivity {
             public void circleLottieStart(LottieAnimationView view) {
 
             }
+
+            @Override
+            public void changeAccelerate(LottieAnimationView view, boolean isAccelerate) {
+
+            }
         });
         activity_main.addView(view);
     }

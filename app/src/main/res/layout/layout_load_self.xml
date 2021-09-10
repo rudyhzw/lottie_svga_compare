@@ -30,6 +30,15 @@
             android:text="循环"
             android:visibility="visible" />
 
+        <Button
+            android:id="@+id/btn_accelerate"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="50dp"
+            android:text="不加速"
+            android:visibility="visible" />
+
     </LinearLayout>
 
     <FrameLayout

@@ -8,4 +8,6 @@ public interface SelfLottieSetInfoCallback {
 
     void circleLottieStart(LottieAnimationView view);
 
+    void changeAccelerate(LottieAnimationView view,boolean isAccelerate);
+
 }
