@@ -39,7 +39,7 @@ public class FileSizeUtil {
                 blockSize = getFileSize(file);
             }
         } catch (Exception e) {
-            Log.e("ld",e.toString());
+            Log.e("TestLottie",e.toString());
         }
         return blockSize;
     }
@@ -60,8 +60,8 @@ public class FileSizeUtil {
                 blockSize = getFileSize(file);
             }
         } catch (Exception e) {
-            Log.e("ld",e.toString());
-            Log.e("ld","获取文件大小,获取失败!");
+            Log.e("TestLottie",e.toString());
+            Log.e("TestLottie","获取文件大小,获取失败!");
         }
         return formatFileSize(blockSize);
     }
@@ -82,7 +82,7 @@ public class FileSizeUtil {
             fis.close();
         } else {
             file.createNewFile();
-            Log.d("ld","获取文件大小,文件不存在!");
+            Log.d("TestLottie","获取文件大小,文件不存在!");
         }
 
         return size;

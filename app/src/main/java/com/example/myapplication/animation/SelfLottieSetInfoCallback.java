@@ -1,13 +1,9 @@
 package com.example.myapplication.animation;
 
-import com.airbnb.lottie.LottieAnimationView;
 
 public interface SelfLottieSetInfoCallback {
 
-    void oneLottieStart(LottieAnimationView view);
+    void setNowJsonName(String name);
 
-    void circleLottieStart(LottieAnimationView view);
-
-    void changeAccelerate(LottieAnimationView view,boolean isAccelerate);
-
+    void startAnimation(int position);
 }
