@@ -11,7 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/lottiesdk" />
+            <option value="$PROJECT_DIR$/lottietest" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.myapplication.activity.TestLottieActivity;
+import com.example.myapplication.activity.TestSdkActivity;
 import com.example.myapplication.activity.TryLottieActivity;
 import com.example.myapplication.databinding.FragmentFirstBinding;
 
@@ -33,6 +34,8 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_1);
+
+//                TestSdkActivity.startTestSdkActivity(getActivity(), TestSdkActivity.PAGE_1);
             }
         });
 
@@ -71,6 +74,39 @@ public class FirstFragment extends Fragment {
                 TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_6);
             }
         });
+
+
+        binding.button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_7);
+            }
+        });
+
+
+        binding.button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_8);
+            }
+        });
+
+
+        binding.button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_9);
+            }
+        });
+
+
+        binding.button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TestLottieActivity.startTestLottieActivity(getActivity(), TestLottieActivity.PAGE_10);
+            }
+        });
+
     }
 
     @Override

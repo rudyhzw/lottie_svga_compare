@@ -42,6 +42,12 @@
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
 
+
+        <activity
+            android:name=".activity.TestSdkActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
+
     </application>
 
 </manifest>

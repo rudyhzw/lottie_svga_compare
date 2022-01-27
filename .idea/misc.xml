@@ -9,6 +9,7 @@
         <entry key="../../../.gradle/caches/transforms-3/506879327b5ce046544f5e221ab60901/transformed/jetified-aianchor-0.0.2/res/layout/xpopup_fullscreen_confirm.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_test.xml" value="0.24074074074074073" />
         <entry key="app/src/main/res/layout-land/fragment_first.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-land/fragment_first_large.xml" value="0.21075837742504408" />
         <entry key="app/src/main/res/layout-land/fragment_second.xml" value="0.24074074074074073" />
         <entry key="app/src/main/res/layout-land/layout_load_self.xml" value="0.24074074074074073" />
         <entry key="app/src/main/res/layout-large/activity_test.xml" value="0.19296875" />
@@ -21,6 +22,7 @@
         <entry key="app/src/main/res/layout/activity_network_next.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_svga.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.3640625" />
+        <entry key="app/src/main/res/layout/activity_test_sdk.xml" value="0.3640625" />
         <entry key="app/src/main/res/layout/activity_try.xml" value="0.3026041666666667" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.19202898550724637" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.375" />
@@ -33,6 +35,8 @@
         <entry key="app/src/main/res/layout/layout_try_drawable_self.xml" value="0.3640625" />
         <entry key="app/src/main/res/layout/test_main.xml" value="0.1796875" />
         <entry key="app/src/main/res/xml/item_select.xml" value="0.2859375" />
+        <entry key="lottietest/src/main/res/layout/layout_load_self.xml" value="0.3582427536231884" />
+        <entry key="lottietest/src/main/res/layout/layout_load_self_sdk.xml" value="0.3582427536231884" />
       </map>
     </option>
   </component>

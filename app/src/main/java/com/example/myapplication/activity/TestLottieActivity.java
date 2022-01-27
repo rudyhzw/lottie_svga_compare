@@ -49,6 +49,10 @@ public class TestLottieActivity extends AppCompatActivity {
     public final static int PAGE_4 = 3;
     public final static int PAGE_5 = 4;
     public final static int PAGE_6 = 5;
+    public final static int PAGE_7 = 6;
+    public final static int PAGE_8 = 7;
+    public final static int PAGE_9 = 8;
+    public final static int PAGE_10 = 9;
 
     private int page = 0;
     private List<String> pageAllList;
@@ -58,65 +62,127 @@ public class TestLottieActivity extends AppCompatActivity {
     //修改数据的地方，对应添加文件夹在assets下
     public List<List<String>> createAllList() {
         List<List<String>> allList = new ArrayList<>();
+//
+//        ArrayList<String> samples_1 = new ArrayList();
+//        samples_1.add("2d1/speaking_introduce.json");
+//        samples_1.add("2d1/speaking_point 2.json");
+//        samples_1.add("2d1/speaking_tell_2.json");
+//        samples_1.add("2d1/speaking_touchchin.json");
+//        samples_1.add("2d1/waving_1.json");
+//
+//        ArrayList<String> samples_2 = new ArrayList();
+//        samples_2.add("2d2/_speaking_point的副本.json");
+//        samples_2.add("2d2/_speaking_tell_1的副本.json");
+//        samples_2.add("2d2/_speaking_tell_2的副本.json");
+//        samples_2.add("2d2/_waiting的副本.json");
+//        samples_2.add("2d2/_waving_1的副本.json");
+//
+//        ArrayList<String> samples_3 = new ArrayList();
+//        samples_3.add("2d3/2_speaking_point的副本.json");
+//        samples_3.add("2d3/2_speaking_tell_1的副本.json");
+//        samples_3.add("2d3/2_waiting的副本.json");
+//        samples_3.add("2d3/2_waving_1的副本.json");
+//        samples_3.add("2d3/2_waving_3的副本.json");
+//
+//        ArrayList<String> samples_4 = new ArrayList();
+//        samples_4.add("2d4/speaking_tell的副本.json");
+//        samples_4.add("2d4/wating的副本.json");
+//        samples_4.add("2d4/waving_1的副本.json");
+//        samples_4.add("2d4/waving_2的副本.json");
+//        samples_4.add("2d4/waving_3的副本.json");
+//
+//        ArrayList<String> samples_5 = new ArrayList();
+//        samples_5.add("2d5/speaking_introduce的副本.json");
+//        samples_5.add("2d5/speaking_point的副本.json");
+//        samples_5.add("2d5/speaking_text的副本.json");
+//        samples_5.add("2d5/waiting的副本.json");
+//        samples_5.add("2d5/waving的副本.json");
+//
+//        ArrayList<String> samples_6 = new ArrayList();
+//        samples_6.add("2d6/*#bodytwisting.json");
+//        samples_6.add("2d6/*#compliment_state.json");
+//        samples_6.add("2d6/*#longing.json");
+//        samples_6.add("2d6/*#not_convinced.json");
+//        samples_6.add("2d6/*#proud_state.json");
+//        samples_6.add("2d6/*#puzzle_state.json");
+//        samples_6.add("2d6/*#sad_face.json");
+//        samples_6.add("2d6/*#scared_face.json");
+//        samples_6.add("2d6/*#show_love.json");
+//        samples_6.add("2d6/*#shy_state.json");
+//        samples_6.add("2d6/*#speaking_ask.json");
+//        samples_6.add("2d6/*#speaking_circle.json");
+//        samples_6.add("2d6/*#speaking_introduce.json");
+//        samples_6.add("2d6/*#speaking_point 2.json");
+//        samples_6.add("2d6/*#speaking_tell_1.json");
+//        samples_6.add("2d6/*#speaking_tell_2.json");
+//        samples_6.add("2d6/*#speaking_touchchin.json");
+//        samples_6.add("2d6/*#support.json");
+//        samples_6.add("2d6/*#waiting.json");
+//        samples_6.add("2d6/*#waving_1.json");
+//        samples_6.add("2d6/*#waving_2.json");
+//        samples_6.add("2d6/*#waving_3.json");
+
 
         ArrayList<String> samples_1 = new ArrayList();
-        samples_1.add("2d1/speaking_introduce.json");
-        samples_1.add("2d1/speaking_point 2.json");
-        samples_1.add("2d1/speaking_tell_2.json");
-        samples_1.add("2d1/speaking_touchchin.json");
-        samples_1.add("2d1/waving_1.json");
+        samples_1.add("lion_standard/###longing.json");
+        samples_1.add("lion_standard/###speaking_circle.json");
+        samples_1.add("lion_standard/###speaking_introduce.json");
+
 
         ArrayList<String> samples_2 = new ArrayList();
-        samples_2.add("2d2/_speaking_point的副本.json");
-        samples_2.add("2d2/_speaking_tell_1的副本.json");
-        samples_2.add("2d2/_speaking_tell_2的副本.json");
-        samples_2.add("2d2/_waiting的副本.json");
-        samples_2.add("2d2/_waving_1的副本.json");
+        samples_2.add("lion_lay_mid/###longing -TM.json");
+        samples_2.add("lion_lay_mid/###speaking_circle-TM.json");
+        samples_2.add("lion_lay_mid/###speaking_introduce-TM.json");
 
         ArrayList<String> samples_3 = new ArrayList();
-        samples_3.add("2d3/2_speaking_point的副本.json");
-        samples_3.add("2d3/2_speaking_tell_1的副本.json");
-        samples_3.add("2d3/2_waiting的副本.json");
-        samples_3.add("2d3/2_waving_1的副本.json");
-        samples_3.add("2d3/2_waving_3的副本.json");
+        samples_3.add("lion_lay_mini/###longing -TS.json");
+        samples_3.add("lion_lay_mini/###speaking_circle-TS.json");
+        samples_3.add("lion_lay_mini/###speaking_introduce-TS.json");
 
         ArrayList<String> samples_4 = new ArrayList();
-        samples_4.add("2d4/speaking_tell的副本.json");
-        samples_4.add("2d4/wating的副本.json");
-        samples_4.add("2d4/waving_1的副本.json");
-        samples_4.add("2d4/waving_2的副本.json");
-        samples_4.add("2d4/waving_3的副本.json");
+        samples_4.add("lion_fps_mid/###longing-KM.json");
+        samples_4.add("lion_fps_mid/###speaking_circle-KM.json");
+        samples_4.add("lion_fps_mid/###speaking_introduce-KM.json");
 
         ArrayList<String> samples_5 = new ArrayList();
-        samples_5.add("2d5/speaking_introduce的副本.json");
-        samples_5.add("2d5/speaking_point的副本.json");
-        samples_5.add("2d5/speaking_text的副本.json");
-        samples_5.add("2d5/waiting的副本.json");
-        samples_5.add("2d5/waving的副本.json");
+        samples_5.add("lion_fps_mini/###longing-TKS.json");
+        samples_5.add("lion_fps_mini/###speaking_circle-TKS.json");
+        samples_5.add("lion_fps_mini/###speaking_introduce-TKS.json");
 
         ArrayList<String> samples_6 = new ArrayList();
-        samples_6.add("2d6/*#bodytwisting.json");
-        samples_6.add("2d6/*#compliment_state.json");
-        samples_6.add("2d6/*#longing.json");
-        samples_6.add("2d6/*#not_convinced.json");
-        samples_6.add("2d6/*#proud_state.json");
-        samples_6.add("2d6/*#puzzle_state.json");
-        samples_6.add("2d6/*#sad_face.json");
-        samples_6.add("2d6/*#scared_face.json");
-        samples_6.add("2d6/*#show_love.json");
-        samples_6.add("2d6/*#shy_state.json");
-        samples_6.add("2d6/*#speaking_ask.json");
-        samples_6.add("2d6/*#speaking_circle.json");
-        samples_6.add("2d6/*#speaking_introduce.json");
-        samples_6.add("2d6/*#speaking_point 2.json");
-        samples_6.add("2d6/*#speaking_tell_1.json");
-        samples_6.add("2d6/*#speaking_tell_2.json");
-        samples_6.add("2d6/*#speaking_touchchin.json");
-        samples_6.add("2d6/*#support.json");
-        samples_6.add("2d6/*#waiting.json");
-        samples_6.add("2d6/*#waving_1.json");
-        samples_6.add("2d6/*#waving_2.json");
-        samples_6.add("2d6/*#waving_3.json");
+        samples_6.add("dingdang_standard/*#bodytwisting.json");
+        samples_6.add("dingdang_standard/*#compliment_state.json");
+        samples_6.add("dingdang_standard/*#speaking_circle.json");
+        samples_6.add("dingdang_standard/*#speaking_tell_1.json");
+
+
+        ArrayList<String> samples_7 = new ArrayList();
+        samples_7.add("dingdang_lay_mid/*#bodytwisting-TZ.json");
+        samples_7.add("dingdang_lay_mid/*#compliment_state-TZ.json");
+        samples_7.add("dingdang_lay_mid/*#speaking_circle -TZ.json");
+        samples_7.add("dingdang_lay_mid/*#speaking_tell_1-TZ.json");
+
+
+        ArrayList<String> samples_8 = new ArrayList();
+        samples_8.add("dingdang_lay_mini/*#bodytwisting-TS.json");
+        samples_8.add("dingdang_lay_mini/*#compliment_state-TS.json");
+        samples_8.add("dingdang_lay_mini/*#speaking_circle-TS.json");
+        samples_8.add("dingdang_lay_mini/*#speaking_tell_1-TS.json");
+
+
+        ArrayList<String> samples_9 = new ArrayList();
+        samples_9.add("dingdang_fps_mid/*#bodytwisting-KM.json");
+        samples_9.add("dingdang_fps_mid/*#compliment_state-KM.json");
+        samples_9.add("dingdang_fps_mid/*#speaking_circle-KM.json");
+        samples_9.add("dingdang_fps_mid/*#speaking_tell_1-KM.json");
+
+
+        ArrayList<String> samples_10 = new ArrayList();
+        samples_10.add("dingdang_fps_mini/*#bodytwisting-KS.json");
+        samples_10.add("dingdang_fps_mini/*#compliment_state-KS.json");
+        samples_10.add("dingdang_fps_mini/*#speaking_circle-KS.json");
+        samples_10.add("dingdang_fps_mini/*#speaking_tell_1-KS.json");
+
 
         allList.add(samples_1);
         allList.add(samples_2);
@@ -124,6 +190,10 @@ public class TestLottieActivity extends AppCompatActivity {
         allList.add(samples_4);
         allList.add(samples_5);
         allList.add(samples_6);
+        allList.add(samples_7);
+        allList.add(samples_8);
+        allList.add(samples_9);
+        allList.add(samples_10);
 
         return allList;
     }
@@ -184,7 +254,12 @@ public class TestLottieActivity extends AppCompatActivity {
                 }
 
                 if (nowPageList.size() > 0) {
-                    selfLottieAnimitionView.setData(nowPageList);
+                    if (selfLottieAnimitionView != null) {
+                        selfLottieAnimitionView.setData(nowPageList);
+                    }else{
+                        getComposition(nowPageList.get(0));
+                    }
+
                 }
             }
         });
@@ -329,14 +404,13 @@ public class TestLottieActivity extends AppCompatActivity {
 //                map.put(json, composition);
                 //设置composition
                 now_composition = composition;
-                Log.e("ld","----lottie----setComposition----真正解析时间--"+ (System.currentTimeMillis() - time));
+                Log.e("ld", "----lottie----setComposition----真正解析时间--" + (System.currentTimeMillis() - time));
 
-                if(selfLottieAnimitionView == null){
+                if (selfLottieAnimitionView == null) {
                     addNowView();
-                }else{
+                } else {
                     selfLottieAnimitionView.setNowLottieComposition(now_composition);
                 }
-
 
 
             }

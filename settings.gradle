@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My Application"
 
+include ':lottietest'
