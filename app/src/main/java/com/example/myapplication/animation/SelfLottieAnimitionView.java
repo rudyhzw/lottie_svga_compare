@@ -37,6 +37,12 @@ public class SelfLottieAnimitionView extends RelativeLayout {
     private  Map<String,LottieComposition> compositionMap;
     private LottieComposition now_composition;
 
+    private long start_time = 0;
+    private long init_time = 0;
+    private long compositon_time = 0;
+    private long end_time = 0;
+    private long temp_time = 0;
+
     public SelfLottieAnimitionView(Context context, List<String> lists, Map<String,LottieComposition> compositionMap,LottieComposition now_composition) {
         super(context);
         this.context = context;
@@ -63,8 +69,6 @@ public class SelfLottieAnimitionView extends RelativeLayout {
         LayoutInflater.from(context).inflate(R.layout.layout_load_self, this);
         lottie_start = findViewById(R.id.lottie_start);
 
-//        View view = new View(context);
-//        view.setBackground(new LottieDrawable());
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) lottie_start.getLayoutParams();
         if (DensityUtil.getScreenWidth(context) < DensityUtil.getScreenHeight(context)) {
             params.width = DensityUtil.getScreenWidth(context);
@@ -102,19 +106,6 @@ public class SelfLottieAnimitionView extends RelativeLayout {
             }
         });
 
-//        Button btn_accelerate = findViewById(R.id.btn_accelerate);
-//        btn_accelerate.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                isAccelerate = !isAccelerate;
-//                if (isAccelerate) {
-//                    btn_accelerate.setText("不加速");
-//                } else {
-//                    btn_accelerate.setText("加速");
-//                }
-//                callback.changeAccelerate(lottie_start, isAccelerate);
-//            }
-//        });
 
         findViewById(R.id.btn_next).setOnClickListener(new OnClickListener() {
             @Override
@@ -143,53 +134,6 @@ public class SelfLottieAnimitionView extends RelativeLayout {
     }
 
 
-    //初始化动画
-//    public void initSelf(String name, int now_position) {
-//        if (lists == null || lists.size() == 0) return;
-//
-//        position = now_position;
-//        cleanSelf();
-//        callback.setNowJsonName(name);
-//        lottie_start.setAnimation(name);
-////        lottie_start.setProgress(0);
-//        lottie_start.addAnimatorListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animator) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animator) {
-//                int nextPosition = 0;
-//
-//                if (isNext && now_position < lists.size() - 1) {
-//                    nextPosition = now_position + 1;
-//                    initSelf(lists.get(nextPosition), nextPosition);
-//                    lottie_start.playAnimation();
-//                } else if (isNextCircle) {
-//                    if (now_position < (lists.size() - 1)) {
-//                        nextPosition = now_position + 1;
-//                    } else {
-//                        nextPosition = 0;
-//                    }
-//                    initSelf(lists.get(nextPosition), nextPosition);
-//                    lottie_start.playAnimation();
-//                }
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animator) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animator) {
-//
-//            }
-//        });
-//    }
-
-
     //清除动画
     public void cleanSelf() {
         lottie_start.removeAllAnimatorListeners();
@@ -198,11 +142,6 @@ public class SelfLottieAnimitionView extends RelativeLayout {
     }
 
 
-    private long start_time = 0;
-    private long init_time = 0;
-    private long compositon_time = 0;
-    private long end_time = 0;
-    private long temp_time = 0;
 
     /**
      * 从本地查找lottie动画
@@ -218,24 +157,20 @@ public class SelfLottieAnimitionView extends RelativeLayout {
 //            LottieComposition composition = LottieComposition.Factory.fromFileSync(context, name);
 //            Log.e("ld","----lottie----setComposition--真正解析的时间--"+ (System.currentTimeMillis() - init_time));
 
-
             cleanSelf();
             lottie_start.setProgress(0);
-            Log.e("ld","----lottie----setComposition--清除上一个view设置时间--"+ (System.currentTimeMillis() - init_time));
+//            Log.e("lottieTest","--lottie--" + name + "--清除上一个view设置耗时："+ (System.currentTimeMillis() - init_time));
 
 //            temp_time = System.currentTimeMillis();
-////            lottie_start.setComposition(composition);
 ////            lottie_start.setComposition(compositionMap.get(name));//进行解析
 //            Log.e("ld","----lottie----setComposition--开始draw的时间--"+ (System.currentTimeMillis() - temp_time));
-
-
 //            compositon_time = System.currentTimeMillis();
 //            Log.e("ld","----lottie----setComposition--解析总的时间--"+ (compositon_time - init_time));
-
 //            lottie_start.setComposition(compositionMap.get(name));//进行解析，生成layView树
+
             lottie_start.setComposition(now_composition);
             compositon_time = System.currentTimeMillis();
-            Log.e("ld", "----lottie----setComposition--进行解析，生成layView树--" + (compositon_time - init_time));
+            Log.e("lottieTest", "--lottie--" + name + "--生成layView树耗时：" + (compositon_time - init_time));
 
             if (isCircle) {
                 lottie_start.setRepeatCount(LottieDrawable.INFINITE);
@@ -244,13 +179,12 @@ public class SelfLottieAnimitionView extends RelativeLayout {
             }
 
 
-
             lottie_start.addAnimatorListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animator) {
                     start_time = System.currentTimeMillis();
-                    Log.e("ld", "----lottie----onAnimationStart----" + System.currentTimeMillis() + "-------初始化到开始做动画-------" + (start_time - init_time));
-                    Log.e("ld", "----lottie----onAnimationStart----" + System.currentTimeMillis() + "-------解析完到开始做动画-------" + (start_time - compositon_time));
+//                    Log.e("lottieTest", "--lottie--" + name + "--初始化到开始做动画耗时：" + (start_time - init_time));
+//                    Log.e("lottieTest", "--lottie--" + name + "--解析完到开始做动画耗时：" + (start_time - compositon_time));
 
                     if (callback != null) {
                         callback.startAnimation(now_position);
@@ -261,8 +195,7 @@ public class SelfLottieAnimitionView extends RelativeLayout {
                 public void onAnimationEnd(Animator animator) {
 
                     end_time =  System.currentTimeMillis();
-                    Log.e("ld", "----lottie----onAnimationEnd----" + System.currentTimeMillis() + "-------动画开始到结束的时间-------" + (end_time - start_time));
-
+                    Log.e("lottieTest", "--lottie--" + name + "--动画开始到动画结束耗时：" + (end_time - start_time));
 
                     if (lists == null || lists.size() == 0) return;
                     int nextPosition = 0;
@@ -308,7 +241,7 @@ public class SelfLottieAnimitionView extends RelativeLayout {
             lottie_start.playAnimation();
 
         } catch (Exception e) {
-            Log.e("TestLottie", "启动动画 :出错");
+            Log.e("lottieTest", "启动动画 :出错");
         }
     }
 
